@@ -1,4 +1,8 @@
-export function Weather({ type, ...rest }) {
+interface WeatherProps extends React.HTMLAttributes<HTMLDivElement> {
+  type: string
+}
+
+export function Weather({ type, ...rest }: WeatherProps) {
   return (
     <div className="container" {...rest}>
       {type === 'sunny' && <div className="sunny"></div>}
