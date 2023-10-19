@@ -1,17 +1,27 @@
 import { api } from './api'
 
 export interface CityProps {
-  id: string
+  id: number
   name: string
   latitude: number
   longitude: number
 }
 
-export async function getCityByNameService(
-  name: string,
-): Promise<CityProps | null> {
+export interface CityAPIResponse {
+  id: number
+  name: string
+  coord: {
+    lon: number
+    lat: number
+  }
+  sys: {
+    country?: string
+  }
+}
+
+export async function getCityByNameService(name: string): Promise<CityProps[]> {
   try {
-    const { data } = await api.get(`/weather?q=${name}`)
+    const { data } = await api.get<CityAPIResponse>(`/weather?q=${name}`)
 
     const city = {
       id: data.id,
@@ -20,8 +30,8 @@ export async function getCityByNameService(
       latitude: data.coord.lat,
     }
 
-    return city
+    return [city]
   } catch (error) {
-    return null
+    return []
   }
 }

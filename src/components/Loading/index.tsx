@@ -1,5 +1,5 @@
-import './styles.css';
-import { Spin } from '../Spin';
+import { Spin } from '../Spin'
+import './styles.css'
 
 export function Loading() {
   return (

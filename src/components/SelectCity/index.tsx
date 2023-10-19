@@ -7,8 +7,12 @@ import {
 } from '../../services/getCityByNameService'
 import { Input } from '../Input'
 
-export function SelectCity({ onSelect }: any) {
-  const [city, setCity] = useState<CityProps | null>()
+interface Props {
+  onSelect: (city: CityProps) => void
+}
+
+export function SelectCity({ onSelect }: Props) {
+  const [city, setCity] = useState<CityProps[]>([])
   const [search, setSearch] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -39,11 +43,12 @@ export function SelectCity({ onSelect }: any) {
       />
 
       <div className="select-list">
-        {city && (
-          <button type="button" key={city.id} onClick={() => onSelect(city)}>
-            <p>{city.name}</p>
-          </button>
-        )}
+        {city.length > 0 &&
+          city.map((city) => (
+            <button type="button" key={city.id} onClick={() => onSelect(city)}>
+              <p>{city.name}</p>
+            </button>
+          ))}
       </div>
     </div>
   )

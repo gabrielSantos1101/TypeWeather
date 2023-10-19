@@ -7,19 +7,15 @@ import { Details } from '../../components/Details'
 import { Loading } from '../../components/Loading'
 import { NextDays } from '../../components/NextDays'
 import { Today } from '../../components/Today'
-
-interface CityProps {
-  id: string
-  name: string
-  latitude: number
-  longitude: number
-}
+import { CityProps } from '../../services/getCityByNameService'
 
 export function Dashboard() {
-  const [data, setData] = useState({})
+  const [data, setData] = useState<GetWeatherByCityResponse>(
+    {} as GetWeatherByCityResponse,
+  )
   const [isLoading, setIsLoading] = useState(true)
-  const [city, setCity] = useState(
-    JSON.parse(localStorage.getItem('@typewheather:city')),
+  const [city, setCity] = useState<CityProps>(
+    JSON.parse(localStorage.getItem('@typewheather:city') ?? ''),
   )
 
   useEffect(() => {
