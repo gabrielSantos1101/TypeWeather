@@ -1,11 +1,19 @@
 import dayjs from 'dayjs'
 import './styles.css'
 
+import { CityProps } from '../../services/getCityByNameService'
+import { WeatherResponseProps } from '../../services/getWeatherByCity'
 import { isDayTime } from '../../utils/isDayTime'
 import { Logo } from '../Logo'
 import { SelectCity } from '../SelectCity'
 
-export function Today({ city, weather, onSearchValue }) {
+interface Props {
+  city: string
+  weather: WeatherResponseProps
+  onSearchValue: (value: CityProps) => void
+}
+
+export function Today({ city, weather, onSearchValue }: Props) {
   const today = dayjs(new Date()).format('dddd, DD [de] MMMM [de] YYYY')
   const isDay = isDayTime()
 
