@@ -1,7 +1,10 @@
 import './styles.css'
 
 import { useEffect, useState } from 'react'
-import { getWeatherByCity } from '../../services/getWeatherByCity'
+import {
+  GetWeatherByCityResponse,
+  getWeatherByCity,
+} from '../../services/getWeatherByCity'
 
 import { Details } from '../../components/Details'
 import { Loading } from '../../components/Loading'
