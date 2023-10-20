@@ -1,7 +1,7 @@
 /* weather */
 .container {
 	transform: scale(.9);
-	width: 1200px;
+	width: 100%;
 	position: absolute;
 	height: 210px;
 	left: 50%;
