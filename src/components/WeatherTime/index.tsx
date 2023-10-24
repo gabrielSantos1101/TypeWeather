@@ -1,17 +1,22 @@
 interface WeatherProps extends React.HTMLAttributes<HTMLDivElement> {
   type: string
+  isDay: boolean
 }
 
-export function WeatherTime({ type, ...rest }: WeatherProps) {
+export function WeatherTime({ type, isDay, ...rest }: WeatherProps) {
   return (
     <div className="container" {...rest}>
-      {type === 'sunny' && <div className="sunny"></div>}
-      {type === 'nublado' && <div className="cloudy"></div>}
-      {type === 'rainy' && <div className="rainy"></div>}
+      {type === 'céu limpo' && isDay && <div className="sunny"></div>}
+      {(type === 'nublado' ||
+        type === 'nuvens dispersas' ||
+        type === 'algumas nuvens') && <div className="cloudy"></div>}
+      {(type === 'chuva leve' ||
+        type === 'chuva moderada' ||
+        type === 'chuva pesada') && <div className="rainy"></div>}
       {type === 'snowy' && <div className="snowy"></div>}
       {type === 'rainbow' && <div className="rainbow"></div>}
-      {type === 'starry' && <div className="starry"></div>}
-      {type === 'stormy' && <div className="stormy"></div>}
+      {type === 'céu limpo' && !isDay && <div className="starry"></div>}
+      {type === 'chuva forte' && <div className="stormy"></div>}
     </div>
   )
 }

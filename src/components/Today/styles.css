@@ -58,7 +58,22 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  overflow: hidden;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.today-details footer .container {
+  position: unset;
+  transform: scale(1.5);
+}
+
+.today-details footer .container div {
+  left: 200px
+}
+
+.today-details footer .container .cloudy {
+  position: absolute;
+  top: 10px
 }
 
 .today-details footer h1 {

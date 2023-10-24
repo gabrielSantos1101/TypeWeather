@@ -6,6 +6,7 @@ import { WeatherResponseProps } from '../../services/getWeatherByCity'
 import { isDayTime } from '../../utils/isDayTime'
 import { Logo } from '../Logo'
 import { SelectCity } from '../SelectCity'
+import { WeatherTime } from '../WeatherTime'
 
 interface Props {
   city: string
@@ -18,7 +19,6 @@ export function Today({ city, weather, onSearchValue }: Props) {
   const isDay = isDayTime()
 
   const bgImg = isDay ? weather.details.bg_day : weather.details.bg_night
-  const icon = isDay ? weather.details?.icon_day : weather.details?.icon_night
 
   return (
     <section className="today">
@@ -38,7 +38,8 @@ export function Today({ city, weather, onSearchValue }: Props) {
 
         <footer>
           <h1>{weather?.temp}ºc</h1>
-          <img src={icon} alt="Tempo" />
+          {/* <img src={icon} alt="Tempo" /> */}
+          <WeatherTime type={weather.description} isDay={isDay} />
         </footer>
 
         <p>

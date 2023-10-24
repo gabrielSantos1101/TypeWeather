@@ -1,9 +1,9 @@
-import "./styles.css";
+import './styles.css'
 
 interface Props {
-  icon: string;
-  title: string;
-  value: string;
+  icon: string
+  title: string
+  value: string
 }
 
 export function WeatherItem({ icon, title, value }: Props) {
@@ -13,5 +13,5 @@ export function WeatherItem({ icon, title, value }: Props) {
       <span>{title}</span>
       <strong>{value}</strong>
     </div>
-  );
+  )
 }
