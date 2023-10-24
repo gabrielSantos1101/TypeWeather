@@ -38,8 +38,8 @@ export function Today({ city, weather, onSearchValue }: Props) {
 
         <footer>
           <h1>{weather?.temp}ºc</h1>
-          {/* <img src={icon} alt="Tempo" /> */}
-          <WeatherTime type={weather.description} isDay={isDay} />
+
+          <WeatherTime type={weather.description} />
         </footer>
 
         <p>
