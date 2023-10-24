@@ -13,7 +13,6 @@ type Props = {
 }
 
 export function NextDaysItem({ data }: Props) {
-  console.log(data)
   return (
     <div className="next-day-item">
       <h2>{data.day}</h2>
