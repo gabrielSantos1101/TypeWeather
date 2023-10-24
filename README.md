@@ -2,7 +2,7 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>TypeWeather</h1>
-<h3>◦ Code with a forecast.</h3>
+<h3>◦ Code with a Gabriel Santos.</h3>
 <h3>◦ Developed with the software and tools below.</h3>
 
 <p align="center">
@@ -35,7 +35,6 @@
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
     - [🤖 Running TypeWeather](#-running-TypeWeather)
-    - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -326,11 +325,6 @@ cd TypeWeather
 
 ### 🤖 Running TypeWeather
 
-```sh
-► INSERT-TEXT
-```
-
-### 🧪 Tests
 ```sh
 ► INSERT-TEXT
 ```
